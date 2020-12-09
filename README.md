@@ -5,7 +5,7 @@ I'm using KVM cluster deployed using jouros/Terraform-libvirt-k8s scripts
 
 ### Deploy 
 
-ansible-playbook master-playbook-2.yml
+ansible-playbook master-playbook-2.yml  
 ansible-playbook node-playbook.yml
 
 
@@ -22,34 +22,34 @@ Compiler:      gc
 Platform:      linux/amd64  
 Linkmode:      dynamic  
 
-crictl --runtime-endpoint unix:///var/run/crio/crio.sock version
-Version:  0.1.0
-RuntimeName:  cri-o
-RuntimeVersion:  1.19.0
-RuntimeApiVersion:  v1alpha1
+crictl --runtime-endpoint unix:///var/run/crio/crio.sock version  
+Version:  0.1.0  
+RuntimeName:  cri-o  
+RuntimeVersion:  1.19.0  
+RuntimeApiVersion:  v1alpha1  
 
-sudo curl -v --unix-socket /var/run/crio/crio.sock http://localhost/info | jq
-{
-  "storage_driver": "overlay",
-  "storage_root": "/var/lib/containers/storage",
-  "cgroup_driver": "systemd",
-  "default_id_mappings": {
+sudo curl -v --unix-socket /var/run/crio/crio.sock http://localhost/info | jq  
+{  
+  "storage_driver": "overlay",  
+  "storage_root": "/var/lib/containers/storage",  
+  "cgroup_driver": "systemd",  
+  "default_id_mappings": {  
     "uids": [
       {
         "container_id": 0,
-        "host_id": 0,
+        "host_id": 0,  
         "size": 4294967295
       }
-    ],
+    ],  
     "gids": [
       {
         "container_id": 0,
         "host_id": 0,
         "size": 4294967295
       }
-    ]
-  }
-}
+    ]  
+  }  
+}  
 
 crio-status info
 cgroup driver: systemd
