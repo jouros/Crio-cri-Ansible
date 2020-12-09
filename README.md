@@ -11,16 +11,16 @@ ansible-playbook node-playbook.yml
 
 #### Some checks
 
-`crio --version
-crio version 1.19.0
-Version:       1.19.0
-GitCommit:     1aea4546834f909fc277e9ec72f00d032c2440be
-GitTreeState:  dirty
-BuildDate:     2020-12-05T15:19:41Z
-GoVersion:     go1.15.2
-Compiler:      gc
-Platform:      linux/amd64
-Linkmode:      dynamic`
+crio --version  
+crio version 1.19.0  
+Version:       1.19.0  
+GitCommit:     1aea4546834f909fc277e9ec72f00d032c2440be  
+GitTreeState:  dirty  
+BuildDate:     2020-12-05T15:19:41Z  
+GoVersion:     go1.15.2  
+Compiler:      gc  
+Platform:      linux/amd64  
+Linkmode:      dynamic  
 
 crictl --runtime-endpoint unix:///var/run/crio/crio.sock version
 Version:  0.1.0
