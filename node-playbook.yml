@@ -1,0 +1,179 @@
+---
+- hosts: worker* 
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+    CRIO_VERSION: "1.19"
+    OS: "Debian_10"
+  become: true
+  tasks:
+  - name: Update package list
+    apt:
+      update_cache: yes
+    register: task_result
+    until: task_result is success
+    retries: 20
+    delay: 2
+
+  - name: Install packages that allow apt to be used over HTTPS
+    apt:
+      name: "{{ packages }}"
+      state: present
+    register: task_result
+    until: task_result is success
+    retries: 20
+    delay: 2
+    vars:
+      packages:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - gpg-agent
+      - software-properties-common
+      - nfs-common
+      - jq
+      - acct
+      - gnupg
+
+  - name: Add CRIO repos
+    shell: |
+      echo "deb [trusted=yes] https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/{{ OS }}/ /" > /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list
+      echo "deb [trusted=yes] http://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable:/cri-o:/{{ CRIO_VERSION }}/{{ OS }}/ /" > /etc/apt/sources.list.d/devel:kubic:libcontainers:stable:cri-o:$VERSION.list
+      apt-key adv --keyserver hkp://pool.sks-keyservers.net:80 --recv-keys 4D64390375060AA4
+      apt-key adv --keyserver hkp://pool.sks-keyservers.net:80 --recv-keys 4D64390375060AA4
+
+  - name: Update cache again
+    apt:
+      update_cache: yes
+    register: task_result
+    until: task_result is success
+    retries: 20
+    delay: 2
+
+  - name: Prerequiste for using cri-o with Kubernetes
+    shell: |
+      modprobe overlay
+      modprobe br_netfilter
+      cat > /etc/sysctl.d/99-kubernetes-cri.conf <<EOF
+      net.bridge.bridge-nf-call-iptables  = 1
+      net.ipv4.ip_forward                 = 1
+      net.bridge.bridge-nf-call-ip6tables = 1
+      EOF
+      sysctl --system
+
+  - name: Install CRIO and its dependecies
+    apt:
+      name: "{{ packages }}"
+      state: present
+    register: task_result
+    until: task_result is success
+    retries: 20
+    delay: 2
+    vars:
+      packages:
+      - cri-o
+      - cri-tools
+    notify:
+      - crio status
+
+  - name: Set CRIO args
+    shell:
+      sed -i "s#/usr/lib/cri-o-runc/sbin/runc#/usr/sbin/runc#" /etc/crio/crio.conf.d/01-crio-runc.conf
+
+  - name: Restart CRIO 
+    systemd:
+      name: crio
+      state: restarted
+      enabled: yes
+      daemon_reload: yes
+
+  - name: Remove swapfile from /etc/fstab
+    mount:
+      name: "{{ item }}"
+      fstype: swap
+      state: absent
+    with_items:
+      - swap
+      - none
+
+  - name: Disable swap
+    command: swapoff -a
+    when: ansible_swaptotal_mb > 0
+
+  - name: Add an apt signing key for Kubernetes
+    apt_key:
+      url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+      state: present
+
+  - name: Adding apt repository for Kubernetes
+    apt_repository:
+      repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
+      state: present
+      filename: kubernetes.list
+
+  - name: Install Kubernetes binaries
+    apt: 
+      name: "{{ packages }}"
+      state: present
+    register: task_result
+    until: task_result is success
+    retries: 20
+    delay: 2
+    vars:
+      packages:
+        - kubelet 
+        - kubeadm 
+        - kubectl 
+
+# Reset is needed if you re-install cluster
+#  - name: Reset kubeadm
+#    command: kubeadm reset --force
+#    register: kube_reset
+#
+#  - debug: var=kube_reset.stdout_lines
+
+  - name: Upload custom KUBELET_EXTRA_ARGS
+    copy:
+      src: "kubelet"
+      dest: "/etc/default/"
+      owner: "root"
+      group: "root"
+      mode: "0644"
+
+  - name: Restart Kubelet and do daemon-reload to pick up config changes
+    systemd:
+      name: kubelet
+      state: restarted
+      daemon_reload: yes
+
+  - name: Copy the join command to server location
+    copy: src=join-command dest=/tmp/join-command.sh mode=0777
+
+  - name: Join the node to cluster
+    command: sh /tmp/join-command.sh
+    register: node_join
+
+  - debug: var=node_join.stdout_lines  
+
+  - name: Remove local join file
+    become: false
+    local_action: file path=join-command state=absent
+    
+  - name: Copy cgroups conf
+    copy:
+      src: "11-cgroups.conf"
+      dest: "/etc/systemd/system/kubelet.service.d/"
+      owner: root
+      group: root
+      mode: "0644"
+
+  - name: Restart kubelet and do daemon-reload to pick up config changes
+    systemd:
+      name: kubelet
+      state: restarted
+      enabled: yes
+      daemon_reload: yes
+
+  handlers:
+    - name: crio status
+      service: name=crio state=started
+...
