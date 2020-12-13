@@ -504,3 +504,222 @@ ansible.cfg to get rid of this message.
 2020-12-11 19:27:07,476 p=32324 u=vcjouni n=ansible | changed: [master1]
 2020-12-11 19:27:07,477 p=32324 u=vcjouni n=ansible | PLAY RECAP ********************************************************************************************************
 2020-12-11 19:27:07,478 p=32324 u=vcjouni n=ansible | master1                    : ok=28   changed=12   unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2020-12-13 17:02:51,272 p=6944 u=vcjouni n=ansible | PLAY [worker*] *****************************************************************************************
+2020-12-13 17:02:51,288 p=6944 u=vcjouni n=ansible | TASK [Gathering Facts] *********************************************************************************
+2020-12-13 17:02:52,416 p=6944 u=vcjouni n=ansible | ok: [worker3]
+2020-12-13 17:02:52,433 p=6944 u=vcjouni n=ansible | ok: [worker4]
+2020-12-13 17:02:52,467 p=6944 u=vcjouni n=ansible | ok: [worker1]
+2020-12-13 17:02:52,470 p=6944 u=vcjouni n=ansible | ok: [worker2]
+2020-12-13 17:02:52,474 p=6944 u=vcjouni n=ansible | TASK [Update package list] *****************************************************************************
+2020-12-13 17:03:00,110 p=6944 u=vcjouni n=ansible | [WARNING]: Updating cache and auto-installing missing dependency: python3-apt
+
+2020-12-13 17:03:00,110 p=6944 u=vcjouni n=ansible | ok: [worker3]
+2020-12-13 17:03:00,110 p=6944 u=vcjouni n=ansible | ok: [worker1]
+2020-12-13 17:03:00,111 p=6944 u=vcjouni n=ansible | ok: [worker2]
+2020-12-13 17:03:00,134 p=6944 u=vcjouni n=ansible | ok: [worker4]
+2020-12-13 17:03:00,138 p=6944 u=vcjouni n=ansible | TASK [Install packages that allow apt to be used over HTTPS] *******************************************
+2020-12-13 17:04:37,573 p=6944 u=vcjouni n=ansible | changed: [worker3]
+2020-12-13 17:04:40,362 p=6944 u=vcjouni n=ansible | changed: [worker2]
+2020-12-13 17:04:40,826 p=6944 u=vcjouni n=ansible | changed: [worker4]
+2020-12-13 17:04:41,167 p=6944 u=vcjouni n=ansible | changed: [worker1]
+2020-12-13 17:04:41,175 p=6944 u=vcjouni n=ansible | TASK [Add CRIO repos] **********************************************************************************
+2020-12-13 17:04:47,873 p=6944 u=vcjouni n=ansible | changed: [worker2]
+2020-12-13 17:04:48,135 p=6944 u=vcjouni n=ansible | changed: [worker4]
+2020-12-13 17:05:42,347 p=6944 u=vcjouni n=ansible | changed: [worker1]
+2020-12-13 17:05:44,851 p=6944 u=vcjouni n=ansible | changed: [worker3]
+2020-12-13 17:05:44,858 p=6944 u=vcjouni n=ansible | TASK [Update apt1] *************************************************************************************
+2020-12-13 17:05:45,523 p=6944 u=vcjouni n=ansible | changed: [worker1]
+2020-12-13 17:05:45,525 p=6944 u=vcjouni n=ansible | changed: [worker2]
+2020-12-13 17:05:45,559 p=6944 u=vcjouni n=ansible | changed: [worker3]
+2020-12-13 17:05:45,567 p=6944 u=vcjouni n=ansible | changed: [worker4]
+2020-12-13 17:05:45,572 p=6944 u=vcjouni n=ansible | TASK [Update apt2] *************************************************************************************
+2020-12-13 17:05:46,070 p=6944 u=vcjouni n=ansible | changed: [worker1]
+2020-12-13 17:05:46,073 p=6944 u=vcjouni n=ansible | changed: [worker4]
+2020-12-13 17:05:46,119 p=6944 u=vcjouni n=ansible | changed: [worker3]
+2020-12-13 17:05:46,127 p=6944 u=vcjouni n=ansible | changed: [worker2]
+2020-12-13 17:05:46,134 p=6944 u=vcjouni n=ansible | TASK [Update apt3] *************************************************************************************
+2020-12-13 17:05:46,621 p=6944 u=vcjouni n=ansible | changed: [worker1]
+2020-12-13 17:05:46,644 p=6944 u=vcjouni n=ansible | changed: [worker2]
+2020-12-13 17:05:46,645 p=6944 u=vcjouni n=ansible | changed: [worker4]
+2020-12-13 17:05:46,666 p=6944 u=vcjouni n=ansible | changed: [worker3]
+2020-12-13 17:05:46,671 p=6944 u=vcjouni n=ansible | TASK [Update cache again] ******************************************************************************
+2020-12-13 17:06:01,978 p=6944 u=vcjouni n=ansible | changed: [worker1]
+2020-12-13 17:06:04,613 p=6944 u=vcjouni n=ansible | changed: [worker4]
+2020-12-13 17:06:04,618 p=6944 u=vcjouni n=ansible | changed: [worker3]
+2020-12-13 17:06:04,871 p=6944 u=vcjouni n=ansible | changed: [worker2]
+2020-12-13 17:06:04,875 p=6944 u=vcjouni n=ansible | TASK [Prerequiste for using cri-o with Kubernetes] *****************************************************
+2020-12-13 17:06:05,242 p=6944 u=vcjouni n=ansible | changed: [worker4]
+2020-12-13 17:06:05,267 p=6944 u=vcjouni n=ansible | changed: [worker1]
+2020-12-13 17:06:05,369 p=6944 u=vcjouni n=ansible | changed: [worker3]
+2020-12-13 17:06:05,384 p=6944 u=vcjouni n=ansible | changed: [worker2]
+2020-12-13 17:06:05,390 p=6944 u=vcjouni n=ansible | TASK [Add latest libseccomp2] **************************************************************************
+2020-12-13 17:06:09,945 p=6944 u=vcjouni n=ansible | [WARNING]: Consider using the apt module rather than running 'apt-get'.  If you need to use command
+because apt is insufficient you can add 'warn: false' to this command task or set
+'command_warnings=False' in ansible.cfg to get rid of this message.
+
+2020-12-13 17:06:09,945 p=6944 u=vcjouni n=ansible | changed: [worker3]
+2020-12-13 17:06:09,958 p=6944 u=vcjouni n=ansible | changed: [worker4]
+2020-12-13 17:06:10,058 p=6944 u=vcjouni n=ansible | changed: [worker2]
+2020-12-13 17:06:10,140 p=6944 u=vcjouni n=ansible | changed: [worker1]
+2020-12-13 17:06:10,145 p=6944 u=vcjouni n=ansible | TASK [Install CRIO and its dependecies] ****************************************************************
+2020-12-13 17:06:28,710 p=6944 u=vcjouni n=ansible | changed: [worker4]
+2020-12-13 17:06:31,735 p=6944 u=vcjouni n=ansible | changed: [worker2]
+2020-12-13 17:06:31,918 p=6944 u=vcjouni n=ansible | changed: [worker3]
+2020-12-13 17:06:33,104 p=6944 u=vcjouni n=ansible | changed: [worker1]
+2020-12-13 17:06:33,110 p=6944 u=vcjouni n=ansible | TASK [Set conmon PATH] *********************************************************************************
+2020-12-13 17:06:33,379 p=6944 u=vcjouni n=ansible | [WARNING]: Consider using the replace, lineinfile or template module rather than running 'sed'.  If you
+need to use command because replace, lineinfile or template is insufficient you can add 'warn: false'
+to this command task or set 'command_warnings=False' in ansible.cfg to get rid of this message.
+
+2020-12-13 17:06:33,380 p=6944 u=vcjouni n=ansible | changed: [worker4]
+2020-12-13 17:06:33,383 p=6944 u=vcjouni n=ansible | changed: [worker1]
+2020-12-13 17:06:33,401 p=6944 u=vcjouni n=ansible | changed: [worker3]
+2020-12-13 17:06:33,459 p=6944 u=vcjouni n=ansible | changed: [worker2]
+2020-12-13 17:06:33,464 p=6944 u=vcjouni n=ansible | TASK [Restart CRIO] ************************************************************************************
+2020-12-13 17:06:36,077 p=6944 u=vcjouni n=ansible | changed: [worker1]
+2020-12-13 17:06:36,078 p=6944 u=vcjouni n=ansible | changed: [worker4]
+2020-12-13 17:06:36,138 p=6944 u=vcjouni n=ansible | changed: [worker2]
+2020-12-13 17:06:36,204 p=6944 u=vcjouni n=ansible | changed: [worker3]
+2020-12-13 17:06:36,209 p=6944 u=vcjouni n=ansible | TASK [Remove swapfile from /etc/fstab] *****************************************************************
+2020-12-13 17:06:36,610 p=6944 u=vcjouni n=ansible | ok: [worker2] => (item=swap)
+2020-12-13 17:06:36,623 p=6944 u=vcjouni n=ansible | ok: [worker3] => (item=swap)
+2020-12-13 17:06:36,678 p=6944 u=vcjouni n=ansible | ok: [worker1] => (item=swap)
+2020-12-13 17:06:36,688 p=6944 u=vcjouni n=ansible | ok: [worker4] => (item=swap)
+2020-12-13 17:06:36,863 p=6944 u=vcjouni n=ansible | ok: [worker2] => (item=none)
+2020-12-13 17:06:36,881 p=6944 u=vcjouni n=ansible | ok: [worker3] => (item=none)
+2020-12-13 17:06:36,926 p=6944 u=vcjouni n=ansible | ok: [worker1] => (item=none)
+2020-12-13 17:06:36,946 p=6944 u=vcjouni n=ansible | ok: [worker4] => (item=none)
+2020-12-13 17:06:36,953 p=6944 u=vcjouni n=ansible | TASK [Disable swap] ************************************************************************************
+2020-12-13 17:06:36,989 p=6944 u=vcjouni n=ansible | skipping: [worker4]
+2020-12-13 17:06:36,995 p=6944 u=vcjouni n=ansible | skipping: [worker1]
+2020-12-13 17:06:37,003 p=6944 u=vcjouni n=ansible | skipping: [worker3]
+2020-12-13 17:06:37,009 p=6944 u=vcjouni n=ansible | skipping: [worker2]
+2020-12-13 17:06:37,013 p=6944 u=vcjouni n=ansible | TASK [Add an apt signing key for Kubernetes] ***********************************************************
+2020-12-13 17:06:39,455 p=6944 u=vcjouni n=ansible | changed: [worker1]
+2020-12-13 17:06:39,488 p=6944 u=vcjouni n=ansible | changed: [worker4]
+2020-12-13 17:06:39,508 p=6944 u=vcjouni n=ansible | changed: [worker2]
+2020-12-13 17:06:39,520 p=6944 u=vcjouni n=ansible | changed: [worker3]
+2020-12-13 17:06:39,524 p=6944 u=vcjouni n=ansible | TASK [Adding apt repository for Kubernetes] ************************************************************
+2020-12-13 17:06:44,685 p=6944 u=vcjouni n=ansible | changed: [worker4]
+2020-12-13 17:06:44,720 p=6944 u=vcjouni n=ansible | changed: [worker2]
+2020-12-13 17:06:44,886 p=6944 u=vcjouni n=ansible | changed: [worker3]
+2020-12-13 17:06:45,344 p=6944 u=vcjouni n=ansible | changed: [worker1]
+2020-12-13 17:06:45,350 p=6944 u=vcjouni n=ansible | TASK [Install Kubernetes binaries] *********************************************************************
+2020-12-13 17:07:08,281 p=6944 u=vcjouni n=ansible | changed: [worker2]
+2020-12-13 17:07:09,938 p=6944 u=vcjouni n=ansible | changed: [worker4]
+2020-12-13 17:07:10,902 p=6944 u=vcjouni n=ansible | changed: [worker1]
+2020-12-13 17:07:10,982 p=6944 u=vcjouni n=ansible | changed: [worker3]
+2020-12-13 17:07:10,989 p=6944 u=vcjouni n=ansible | TASK [Upload custom KUBELET_EXTRA_ARGS] ****************************************************************
+2020-12-13 17:07:11,497 p=6944 u=vcjouni n=ansible | changed: [worker2]
+2020-12-13 17:07:11,502 p=6944 u=vcjouni n=ansible | changed: [worker3]
+2020-12-13 17:07:11,526 p=6944 u=vcjouni n=ansible | changed: [worker4]
+2020-12-13 17:07:11,529 p=6944 u=vcjouni n=ansible | changed: [worker1]
+2020-12-13 17:07:11,533 p=6944 u=vcjouni n=ansible | TASK [Restart Kubelet and do daemon-reload to pick up config changes] **********************************
+2020-12-13 17:07:12,139 p=6944 u=vcjouni n=ansible | changed: [worker4]
+2020-12-13 17:07:12,173 p=6944 u=vcjouni n=ansible | changed: [worker3]
+2020-12-13 17:07:12,175 p=6944 u=vcjouni n=ansible | changed: [worker2]
+2020-12-13 17:07:12,195 p=6944 u=vcjouni n=ansible | changed: [worker1]
+2020-12-13 17:07:12,201 p=6944 u=vcjouni n=ansible | TASK [Copy the join command to server location] ********************************************************
+2020-12-13 17:07:12,693 p=6944 u=vcjouni n=ansible | changed: [worker1]
+2020-12-13 17:07:12,696 p=6944 u=vcjouni n=ansible | changed: [worker4]
+2020-12-13 17:07:12,700 p=6944 u=vcjouni n=ansible | changed: [worker3]
+2020-12-13 17:07:12,711 p=6944 u=vcjouni n=ansible | changed: [worker2]
+2020-12-13 17:07:12,716 p=6944 u=vcjouni n=ansible | TASK [Join the node to cluster] ************************************************************************
+2020-12-13 17:07:25,086 p=6944 u=vcjouni n=ansible | changed: [worker4]
+2020-12-13 17:07:25,101 p=6944 u=vcjouni n=ansible | changed: [worker3]
+2020-12-13 17:07:25,104 p=6944 u=vcjouni n=ansible | changed: [worker2]
+2020-12-13 17:07:25,132 p=6944 u=vcjouni n=ansible | changed: [worker1]
+2020-12-13 17:07:25,136 p=6944 u=vcjouni n=ansible | TASK [debug] *******************************************************************************************
+2020-12-13 17:07:25,177 p=6944 u=vcjouni n=ansible | ok: [worker4] => {
+    "node_join.stdout_lines": [
+        "[preflight] Running pre-flight checks",
+        "[preflight] Reading configuration from the cluster...",
+        "[preflight] FYI: You can look at this config file with 'kubectl -n kube-system get cm kubeadm-config -o yaml'",
+        "[kubelet-start] Writing kubelet configuration to file \"/var/lib/kubelet/config.yaml\"",
+        "[kubelet-start] Writing kubelet environment file with flags to file \"/var/lib/kubelet/kubeadm-flags.env\"",
+        "[kubelet-start] Starting the kubelet",
+        "[kubelet-start] Waiting for the kubelet to perform the TLS Bootstrap...",
+        "",
+        "This node has joined the cluster:",
+        "* Certificate signing request was sent to apiserver and a response was received.",
+        "* The Kubelet was informed of the new secure connection details.",
+        "",
+        "Run 'kubectl get nodes' on the control-plane to see this node join the cluster."
+    ]
+}
+2020-12-13 17:07:25,186 p=6944 u=vcjouni n=ansible | ok: [worker1] => {
+    "node_join.stdout_lines": [
+        "[preflight] Running pre-flight checks",
+        "[preflight] Reading configuration from the cluster...",
+        "[preflight] FYI: You can look at this config file with 'kubectl -n kube-system get cm kubeadm-config -o yaml'",
+        "[kubelet-start] Writing kubelet configuration to file \"/var/lib/kubelet/config.yaml\"",
+        "[kubelet-start] Writing kubelet environment file with flags to file \"/var/lib/kubelet/kubeadm-flags.env\"",
+        "[kubelet-start] Starting the kubelet",
+        "[kubelet-start] Waiting for the kubelet to perform the TLS Bootstrap...",
+        "",
+        "This node has joined the cluster:",
+        "* Certificate signing request was sent to apiserver and a response was received.",
+        "* The Kubelet was informed of the new secure connection details.",
+        "",
+        "Run 'kubectl get nodes' on the control-plane to see this node join the cluster."
+    ]
+}
+2020-12-13 17:07:25,194 p=6944 u=vcjouni n=ansible | ok: [worker3] => {
+    "node_join.stdout_lines": [
+        "[preflight] Running pre-flight checks",
+        "[preflight] Reading configuration from the cluster...",
+        "[preflight] FYI: You can look at this config file with 'kubectl -n kube-system get cm kubeadm-config -o yaml'",
+        "[kubelet-start] Writing kubelet configuration to file \"/var/lib/kubelet/config.yaml\"",
+        "[kubelet-start] Writing kubelet environment file with flags to file \"/var/lib/kubelet/kubeadm-flags.env\"",
+        "[kubelet-start] Starting the kubelet",
+        "[kubelet-start] Waiting for the kubelet to perform the TLS Bootstrap...",
+        "",
+        "This node has joined the cluster:",
+        "* Certificate signing request was sent to apiserver and a response was received.",
+        "* The Kubelet was informed of the new secure connection details.",
+        "",
+        "Run 'kubectl get nodes' on the control-plane to see this node join the cluster."
+    ]
+}
+2020-12-13 17:07:25,215 p=6944 u=vcjouni n=ansible | ok: [worker2] => {
+    "node_join.stdout_lines": [
+        "[preflight] Running pre-flight checks",
+        "[preflight] Reading configuration from the cluster...",
+        "[preflight] FYI: You can look at this config file with 'kubectl -n kube-system get cm kubeadm-config -o yaml'",
+        "[kubelet-start] Writing kubelet configuration to file \"/var/lib/kubelet/config.yaml\"",
+        "[kubelet-start] Writing kubelet environment file with flags to file \"/var/lib/kubelet/kubeadm-flags.env\"",
+        "[kubelet-start] Starting the kubelet",
+        "[kubelet-start] Waiting for the kubelet to perform the TLS Bootstrap...",
+        "",
+        "This node has joined the cluster:",
+        "* Certificate signing request was sent to apiserver and a response was received.",
+        "* The Kubelet was informed of the new secure connection details.",
+        "",
+        "Run 'kubectl get nodes' on the control-plane to see this node join the cluster."
+    ]
+}
+2020-12-13 17:07:25,221 p=6944 u=vcjouni n=ansible | TASK [Remove local join file] **************************************************************************
+2020-12-13 17:07:25,584 p=6944 u=vcjouni n=ansible | changed: [worker1 -> localhost]
+2020-12-13 17:07:25,595 p=6944 u=vcjouni n=ansible | ok: [worker4 -> localhost]
+2020-12-13 17:07:25,597 p=6944 u=vcjouni n=ansible | ok: [worker2 -> localhost]
+2020-12-13 17:07:25,601 p=6944 u=vcjouni n=ansible | ok: [worker3 -> localhost]
+2020-12-13 17:07:25,605 p=6944 u=vcjouni n=ansible | TASK [Copy cgroups conf] *******************************************************************************
+2020-12-13 17:07:26,167 p=6944 u=vcjouni n=ansible | changed: [worker4]
+2020-12-13 17:07:26,213 p=6944 u=vcjouni n=ansible | changed: [worker3]
+2020-12-13 17:07:26,224 p=6944 u=vcjouni n=ansible | changed: [worker1]
+2020-12-13 17:07:26,248 p=6944 u=vcjouni n=ansible | changed: [worker2]
+2020-12-13 17:07:26,253 p=6944 u=vcjouni n=ansible | TASK [Restart kubelet and do daemon-reload to pick up config changes] **********************************
+2020-12-13 17:07:26,966 p=6944 u=vcjouni n=ansible | changed: [worker1]
+2020-12-13 17:07:26,975 p=6944 u=vcjouni n=ansible | changed: [worker4]
+2020-12-13 17:07:27,015 p=6944 u=vcjouni n=ansible | changed: [worker3]
+2020-12-13 17:07:27,065 p=6944 u=vcjouni n=ansible | changed: [worker2]
+2020-12-13 17:07:27,066 p=6944 u=vcjouni n=ansible | RUNNING HANDLER [crio status] **************************************************************************
+2020-12-13 17:07:27,496 p=6944 u=vcjouni n=ansible | ok: [worker4]
+2020-12-13 17:07:27,525 p=6944 u=vcjouni n=ansible | ok: [worker2]
+2020-12-13 17:07:27,548 p=6944 u=vcjouni n=ansible | ok: [worker1]
+2020-12-13 17:07:27,551 p=6944 u=vcjouni n=ansible | ok: [worker3]
+2020-12-13 17:07:27,553 p=6944 u=vcjouni n=ansible | PLAY RECAP *********************************************************************************************
+2020-12-13 17:07:27,553 p=6944 u=vcjouni n=ansible | worker1                    : ok=26   changed=21   unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2020-12-13 17:07:27,553 p=6944 u=vcjouni n=ansible | worker2                    : ok=26   changed=20   unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2020-12-13 17:07:27,553 p=6944 u=vcjouni n=ansible | worker3                    : ok=26   changed=20   unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2020-12-13 17:07:27,553 p=6944 u=vcjouni n=ansible | worker4                    : ok=26   changed=20   unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   

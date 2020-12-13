@@ -107,10 +107,6 @@
     notify:
       - crio status
 
-#  - name: Set CRIO args
-#    shell: 
-#      sed -i "s#/usr/lib/cri-o-runc/sbin/runc#/usr/sbin/runc#" /etc/crio/crio.conf.d/01-crio-runc.conf 
-
   - name: Set conmon PATH
     shell: |
       sed -i 's#conmon = ""#conmon = "/usr/libexec/podman/conmon"#' /etc/crio/crio.conf
