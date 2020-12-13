@@ -34,6 +34,8 @@
       - golang-go
       - acct
       - gnupg
+      - libseccomp-dev
+      - conntrack
 
   - name: Add CRIO repos
     shell: |
@@ -41,6 +43,30 @@
       echo "deb [trusted=yes] http://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable:/cri-o:/{{ CRIO_VERSION }}/{{ OS }}/ /" > /etc/apt/sources.list.d/devel:kubic:libcontainers:stable:cri-o:$VERSION.list 
       apt-key adv --keyserver hkp://pool.sks-keyservers.net:80 --recv-keys 4D64390375060AA4
       apt-key adv --keyserver hkp://pool.sks-keyservers.net:80 --recv-keys 4D64390375060AA4
+
+  - name: Update apt1
+    copy:
+      src: Apt/99defaultrelease
+      dest: /etc/apt/apt.conf.d/
+      owner: root
+      group: root
+      mode: '0440'
+
+  - name: Update apt2
+    copy:
+      src: Apt/stable.list
+      dest: /etc/apt/sources.list.d/
+      owner: root
+      group: root
+      mode: '0440'
+
+  - name: Update apt3
+    copy:
+      src: Apt/testing.list
+      dest: /etc/apt/sources.list.d/
+      owner: root
+      group: root
+      mode: '0440'
 
   - name: Update cache again
     apt:
@@ -61,6 +87,10 @@
       EOF
       sysctl --system
 
+  - name: Add latest libseccomp2
+    shell: |
+      /usr/bin/apt-get -t testing install -y libseccomp2
+
   - name: Install CRIO and its dependecies
     apt: 
       name: "{{ packages }}"
@@ -73,12 +103,17 @@
       packages:
       - cri-o 
       - cri-tools
+      - cri-o-runc
     notify:
       - crio status
 
-  - name: Set CRIO args
-    shell: 
-      sed -i "s#/usr/lib/cri-o-runc/sbin/runc#/usr/sbin/runc#" /etc/crio/crio.conf.d/01-crio-runc.conf 
+#  - name: Set CRIO args
+#    shell: 
+#      sed -i "s#/usr/lib/cri-o-runc/sbin/runc#/usr/sbin/runc#" /etc/crio/crio.conf.d/01-crio-runc.conf 
+
+  - name: Set conmon PATH
+    shell: |
+      sed -i 's#conmon = ""#conmon = "/usr/libexec/podman/conmon"#' /etc/crio/crio.conf
 
   - name: Set CRIO Prometheus metrics
     copy:

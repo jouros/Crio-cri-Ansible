@@ -33,6 +33,7 @@
       - jq
       - acct
       - gnupg
+      - libseccomp-dev
 
   - name: Add CRIO repos
     shell: |

@@ -1,1 +1,506 @@
 
+2020-12-11 17:25:18,410 p=22204 u=vcjouni n=ansible | ERROR! Syntax Error while loading YAML.
+  did not find expected '-' indicator
+
+The error appears to be in '/home/vcjouni/Terraform/Crio-cri-Ansible/update_testing.yml': line 44, column 2, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+ - name: Set CRIO args
+ ^ here
+
+2020-12-11 17:27:20,552 p=22969 u=vcjouni n=ansible | PLAY [all] ****************************************************************************************
+2020-12-11 17:27:20,569 p=22969 u=vcjouni n=ansible | TASK [Gathering Facts] ****************************************************************************
+2020-12-11 17:27:21,767 p=22969 u=vcjouni n=ansible | ok: [worker3]
+2020-12-11 17:27:21,866 p=22969 u=vcjouni n=ansible | ok: [worker4]
+2020-12-11 17:27:21,867 p=22969 u=vcjouni n=ansible | ok: [worker2]
+2020-12-11 17:27:21,868 p=22969 u=vcjouni n=ansible | ok: [worker1]
+2020-12-11 17:27:21,876 p=22969 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 17:27:21,882 p=22969 u=vcjouni n=ansible | TASK [Update package list] ************************************************************************
+2020-12-11 17:27:25,607 p=22969 u=vcjouni n=ansible | changed: [worker4]
+2020-12-11 17:27:25,607 p=22969 u=vcjouni n=ansible | changed: [worker2]
+2020-12-11 17:27:25,608 p=22969 u=vcjouni n=ansible | changed: [worker1]
+2020-12-11 17:27:25,609 p=22969 u=vcjouni n=ansible | changed: [worker3]
+2020-12-11 17:27:29,038 p=22969 u=vcjouni n=ansible | FAILED - RETRYING: Update package list (20 retries left).
+2020-12-11 17:27:39,868 p=22969 u=vcjouni n=ansible | FAILED - RETRYING: Update package list (19 retries left).
+2020-12-11 17:27:46,214 p=22969 u=vcjouni n=ansible | FAILED - RETRYING: Update package list (18 retries left).
+2020-12-11 17:27:52,551 p=22969 u=vcjouni n=ansible | FAILED - RETRYING: Update package list (17 retries left).
+2020-12-11 17:27:58,903 p=22969 u=vcjouni n=ansible | FAILED - RETRYING: Update package list (16 retries left).
+2020-12-11 17:28:05,256 p=22969 u=vcjouni n=ansible | FAILED - RETRYING: Update package list (15 retries left).
+2020-12-11 17:28:11,600 p=22969 u=vcjouni n=ansible | FAILED - RETRYING: Update package list (14 retries left).
+2020-12-11 17:28:19,615 p=22969 u=vcjouni n=ansible | FAILED - RETRYING: Update package list (13 retries left).
+2020-12-11 17:28:25,874 p=22969 u=vcjouni n=ansible | FAILED - RETRYING: Update package list (12 retries left).
+2020-12-11 17:28:32,268 p=22969 u=vcjouni n=ansible | FAILED - RETRYING: Update package list (11 retries left).
+2020-12-11 17:28:38,634 p=22969 u=vcjouni n=ansible | FAILED - RETRYING: Update package list (10 retries left).
+2020-12-11 17:28:45,034 p=22969 u=vcjouni n=ansible | FAILED - RETRYING: Update package list (9 retries left).
+2020-12-11 17:28:54,186 p=22969 u=vcjouni n=ansible | FAILED - RETRYING: Update package list (8 retries left).
+2020-12-11 17:29:00,554 p=22969 u=vcjouni n=ansible | FAILED - RETRYING: Update package list (7 retries left).
+2020-12-11 17:29:06,876 p=22969 u=vcjouni n=ansible | FAILED - RETRYING: Update package list (6 retries left).
+2020-12-11 17:29:10,619 p=22969 u=vcjouni n=ansible |  [ERROR]: User interrupted execution
+
+2020-12-11 17:38:39,204 p=23607 u=vcjouni n=ansible | PLAY [all] ****************************************************************************************
+2020-12-11 17:38:39,214 p=23607 u=vcjouni n=ansible | TASK [Gathering Facts] ****************************************************************************
+2020-12-11 17:38:40,294 p=23607 u=vcjouni n=ansible | ok: [worker1]
+2020-12-11 17:38:40,296 p=23607 u=vcjouni n=ansible | ok: [worker3]
+2020-12-11 17:38:40,306 p=23607 u=vcjouni n=ansible | ok: [worker4]
+2020-12-11 17:38:40,349 p=23607 u=vcjouni n=ansible | ok: [worker2]
+2020-12-11 17:38:40,446 p=23607 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 17:38:40,453 p=23607 u=vcjouni n=ansible | TASK [Update package list] ************************************************************************
+2020-12-11 17:38:42,606 p=23607 u=vcjouni n=ansible | ok: [worker2]
+2020-12-11 17:38:42,630 p=23607 u=vcjouni n=ansible | ok: [worker1]
+2020-12-11 17:38:43,265 p=23607 u=vcjouni n=ansible | changed: [worker3]
+2020-12-11 17:38:43,392 p=23607 u=vcjouni n=ansible | changed: [worker4]
+2020-12-11 17:38:43,564 p=23607 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 17:38:43,574 p=23607 u=vcjouni n=ansible | TASK [Upload] *************************************************************************************
+2020-12-11 17:38:45,313 p=23607 u=vcjouni n=ansible | changed: [worker2]
+2020-12-11 17:38:45,416 p=23607 u=vcjouni n=ansible | changed: [worker1]
+2020-12-11 17:38:45,443 p=23607 u=vcjouni n=ansible | changed: [worker3]
+2020-12-11 17:38:45,469 p=23607 u=vcjouni n=ansible | changed: [worker4]
+2020-12-11 17:38:45,558 p=23607 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 17:38:45,568 p=23607 u=vcjouni n=ansible | TASK [Update apt] *********************************************************************************
+2020-12-11 17:38:45,960 p=23607 u=vcjouni n=ansible | fatal: [worker4]: FAILED! => {"changed": true, "cmd": "cp /home/joro/99defaultrelease /etc/apt/apt.conf.d/ cp /home/joro/stable.list /etc/apt/sources.list.d/ cp /home/joro/testing.list /etc/apt/sources.list.d/", "delta": "0:00:00.005473", "end": "2020-12-11 15:38:45.919472", "msg": "non-zero return code", "rc": 1, "start": "2020-12-11 15:38:45.913999", "stderr": "cp: -r not specified; omitting directory '/etc/apt/apt.conf.d/'\ncp: cannot stat 'cp': No such file or directory\ncp: -r not specified; omitting directory '/etc/apt/sources.list.d/'\ncp: cannot stat 'cp': No such file or directory", "stderr_lines": ["cp: -r not specified; omitting directory '/etc/apt/apt.conf.d/'", "cp: cannot stat 'cp': No such file or directory", "cp: -r not specified; omitting directory '/etc/apt/sources.list.d/'", "cp: cannot stat 'cp': No such file or directory"], "stdout": "", "stdout_lines": []}
+2020-12-11 17:38:45,966 p=23607 u=vcjouni n=ansible | fatal: [worker1]: FAILED! => {"changed": true, "cmd": "cp /home/joro/99defaultrelease /etc/apt/apt.conf.d/ cp /home/joro/stable.list /etc/apt/sources.list.d/ cp /home/joro/testing.list /etc/apt/sources.list.d/", "delta": "0:00:00.004065", "end": "2020-12-11 15:38:45.916950", "msg": "non-zero return code", "rc": 1, "start": "2020-12-11 15:38:45.912885", "stderr": "cp: -r not specified; omitting directory '/etc/apt/apt.conf.d/'\ncp: cannot stat 'cp': No such file or directory\ncp: -r not specified; omitting directory '/etc/apt/sources.list.d/'\ncp: cannot stat 'cp': No such file or directory", "stderr_lines": ["cp: -r not specified; omitting directory '/etc/apt/apt.conf.d/'", "cp: cannot stat 'cp': No such file or directory", "cp: -r not specified; omitting directory '/etc/apt/sources.list.d/'", "cp: cannot stat 'cp': No such file or directory"], "stdout": "", "stdout_lines": []}
+2020-12-11 17:38:45,970 p=23607 u=vcjouni n=ansible | fatal: [master1]: FAILED! => {"changed": true, "cmd": "cp /home/joro/99defaultrelease /etc/apt/apt.conf.d/ cp /home/joro/stable.list /etc/apt/sources.list.d/ cp /home/joro/testing.list /etc/apt/sources.list.d/", "delta": "0:00:00.004760", "end": "2020-12-11 15:38:45.926488", "msg": "non-zero return code", "rc": 1, "start": "2020-12-11 15:38:45.921728", "stderr": "cp: -r not specified; omitting directory '/etc/apt/apt.conf.d/'\ncp: cannot stat 'cp': No such file or directory\ncp: -r not specified; omitting directory '/etc/apt/sources.list.d/'\ncp: cannot stat 'cp': No such file or directory", "stderr_lines": ["cp: -r not specified; omitting directory '/etc/apt/apt.conf.d/'", "cp: cannot stat 'cp': No such file or directory", "cp: -r not specified; omitting directory '/etc/apt/sources.list.d/'", "cp: cannot stat 'cp': No such file or directory"], "stdout": "", "stdout_lines": []}
+2020-12-11 17:38:46,001 p=23607 u=vcjouni n=ansible | fatal: [worker2]: FAILED! => {"changed": true, "cmd": "cp /home/joro/99defaultrelease /etc/apt/apt.conf.d/ cp /home/joro/stable.list /etc/apt/sources.list.d/ cp /home/joro/testing.list /etc/apt/sources.list.d/", "delta": "0:00:00.004169", "end": "2020-12-11 15:38:45.974805", "msg": "non-zero return code", "rc": 1, "start": "2020-12-11 15:38:45.970636", "stderr": "cp: -r not specified; omitting directory '/etc/apt/apt.conf.d/'\ncp: cannot stat 'cp': No such file or directory\ncp: -r not specified; omitting directory '/etc/apt/sources.list.d/'\ncp: cannot stat 'cp': No such file or directory", "stderr_lines": ["cp: -r not specified; omitting directory '/etc/apt/apt.conf.d/'", "cp: cannot stat 'cp': No such file or directory", "cp: -r not specified; omitting directory '/etc/apt/sources.list.d/'", "cp: cannot stat 'cp': No such file or directory"], "stdout": "", "stdout_lines": []}
+2020-12-11 17:38:46,011 p=23607 u=vcjouni n=ansible | fatal: [worker3]: FAILED! => {"changed": true, "cmd": "cp /home/joro/99defaultrelease /etc/apt/apt.conf.d/ cp /home/joro/stable.list /etc/apt/sources.list.d/ cp /home/joro/testing.list /etc/apt/sources.list.d/", "delta": "0:00:00.004211", "end": "2020-12-11 15:38:45.986324", "msg": "non-zero return code", "rc": 1, "start": "2020-12-11 15:38:45.982113", "stderr": "cp: -r not specified; omitting directory '/etc/apt/apt.conf.d/'\ncp: cannot stat 'cp': No such file or directory\ncp: -r not specified; omitting directory '/etc/apt/sources.list.d/'\ncp: cannot stat 'cp': No such file or directory", "stderr_lines": ["cp: -r not specified; omitting directory '/etc/apt/apt.conf.d/'", "cp: cannot stat 'cp': No such file or directory", "cp: -r not specified; omitting directory '/etc/apt/sources.list.d/'", "cp: cannot stat 'cp': No such file or directory"], "stdout": "", "stdout_lines": []}
+2020-12-11 17:38:46,012 p=23607 u=vcjouni n=ansible | PLAY RECAP ****************************************************************************************
+2020-12-11 17:38:46,013 p=23607 u=vcjouni n=ansible | master1                    : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-11 17:38:46,013 p=23607 u=vcjouni n=ansible | worker1                    : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-11 17:38:46,013 p=23607 u=vcjouni n=ansible | worker2                    : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-11 17:38:46,013 p=23607 u=vcjouni n=ansible | worker3                    : ok=3    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-11 17:38:46,013 p=23607 u=vcjouni n=ansible | worker4                    : ok=3    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-11 17:43:42,201 p=24078 u=vcjouni n=ansible | PLAY [all] ****************************************************************************************
+2020-12-11 17:43:42,212 p=24078 u=vcjouni n=ansible | TASK [Gathering Facts] ****************************************************************************
+2020-12-11 17:43:43,302 p=24078 u=vcjouni n=ansible | ok: [worker4]
+2020-12-11 17:43:43,344 p=24078 u=vcjouni n=ansible | ok: [worker3]
+2020-12-11 17:43:43,359 p=24078 u=vcjouni n=ansible | ok: [worker2]
+2020-12-11 17:43:43,392 p=24078 u=vcjouni n=ansible | ok: [worker1]
+2020-12-11 17:43:44,404 p=24078 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 17:43:44,410 p=24078 u=vcjouni n=ansible | TASK [Update package list] ************************************************************************
+2020-12-11 17:43:50,211 p=24078 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 17:43:57,809 p=24078 u=vcjouni n=ansible | changed: [worker3]
+2020-12-11 17:43:58,460 p=24078 u=vcjouni n=ansible | changed: [worker1]
+2020-12-11 17:43:59,050 p=24078 u=vcjouni n=ansible | changed: [worker4]
+2020-12-11 17:43:59,276 p=24078 u=vcjouni n=ansible | changed: [worker2]
+2020-12-11 17:43:59,282 p=24078 u=vcjouni n=ansible | TASK [Upload] *************************************************************************************
+2020-12-11 17:44:01,040 p=24078 u=vcjouni n=ansible | ok: [worker3]
+2020-12-11 17:44:01,072 p=24078 u=vcjouni n=ansible | ok: [worker1]
+2020-12-11 17:44:01,074 p=24078 u=vcjouni n=ansible | ok: [worker2]
+2020-12-11 17:44:01,080 p=24078 u=vcjouni n=ansible | ok: [worker4]
+2020-12-11 17:44:01,152 p=24078 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 17:44:01,161 p=24078 u=vcjouni n=ansible | TASK [Update apt] *********************************************************************************
+2020-12-11 17:44:01,539 p=24078 u=vcjouni n=ansible | fatal: [worker2]: FAILED! => {"changed": true, "cmd": "/bin/cp /home/joro/99defaultrelease /etc/apt/apt.conf.d/ /bin/cp /home/joro/stable.list /etc/apt/sources.list.d/ /bin/cp /home/joro/testing.list /etc/apt/sources.list.d/", "delta": "0:00:00.005041", "end": "2020-12-11 15:44:01.503534", "msg": "non-zero return code", "rc": 1, "start": "2020-12-11 15:44:01.498493", "stderr": "/bin/cp: -r not specified; omitting directory '/etc/apt/apt.conf.d/'\n/bin/cp: -r not specified; omitting directory '/etc/apt/sources.list.d/'\n/bin/cp: warning: source file '/bin/cp' specified more than once", "stderr_lines": ["/bin/cp: -r not specified; omitting directory '/etc/apt/apt.conf.d/'", "/bin/cp: -r not specified; omitting directory '/etc/apt/sources.list.d/'", "/bin/cp: warning: source file '/bin/cp' specified more than once"], "stdout": "", "stdout_lines": []}
+2020-12-11 17:44:01,585 p=24078 u=vcjouni n=ansible | fatal: [worker3]: FAILED! => {"changed": true, "cmd": "/bin/cp /home/joro/99defaultrelease /etc/apt/apt.conf.d/ /bin/cp /home/joro/stable.list /etc/apt/sources.list.d/ /bin/cp /home/joro/testing.list /etc/apt/sources.list.d/", "delta": "0:00:00.004421", "end": "2020-12-11 15:44:01.552933", "msg": "non-zero return code", "rc": 1, "start": "2020-12-11 15:44:01.548512", "stderr": "/bin/cp: -r not specified; omitting directory '/etc/apt/apt.conf.d/'\n/bin/cp: -r not specified; omitting directory '/etc/apt/sources.list.d/'\n/bin/cp: warning: source file '/bin/cp' specified more than once", "stderr_lines": ["/bin/cp: -r not specified; omitting directory '/etc/apt/apt.conf.d/'", "/bin/cp: -r not specified; omitting directory '/etc/apt/sources.list.d/'", "/bin/cp: warning: source file '/bin/cp' specified more than once"], "stdout": "", "stdout_lines": []}
+2020-12-11 17:44:01,591 p=24078 u=vcjouni n=ansible | fatal: [worker1]: FAILED! => {"changed": true, "cmd": "/bin/cp /home/joro/99defaultrelease /etc/apt/apt.conf.d/ /bin/cp /home/joro/stable.list /etc/apt/sources.list.d/ /bin/cp /home/joro/testing.list /etc/apt/sources.list.d/", "delta": "0:00:00.005877", "end": "2020-12-11 15:44:01.556787", "msg": "non-zero return code", "rc": 1, "start": "2020-12-11 15:44:01.550910", "stderr": "/bin/cp: -r not specified; omitting directory '/etc/apt/apt.conf.d/'\n/bin/cp: -r not specified; omitting directory '/etc/apt/sources.list.d/'\n/bin/cp: warning: source file '/bin/cp' specified more than once", "stderr_lines": ["/bin/cp: -r not specified; omitting directory '/etc/apt/apt.conf.d/'", "/bin/cp: -r not specified; omitting directory '/etc/apt/sources.list.d/'", "/bin/cp: warning: source file '/bin/cp' specified more than once"], "stdout": "", "stdout_lines": []}
+2020-12-11 17:44:01,606 p=24078 u=vcjouni n=ansible | fatal: [master1]: FAILED! => {"changed": true, "cmd": "/bin/cp /home/joro/99defaultrelease /etc/apt/apt.conf.d/ /bin/cp /home/joro/stable.list /etc/apt/sources.list.d/ /bin/cp /home/joro/testing.list /etc/apt/sources.list.d/", "delta": "0:00:00.006062", "end": "2020-12-11 15:44:01.567782", "msg": "non-zero return code", "rc": 1, "start": "2020-12-11 15:44:01.561720", "stderr": "/bin/cp: -r not specified; omitting directory '/etc/apt/apt.conf.d/'\n/bin/cp: -r not specified; omitting directory '/etc/apt/sources.list.d/'\n/bin/cp: warning: source file '/bin/cp' specified more than once", "stderr_lines": ["/bin/cp: -r not specified; omitting directory '/etc/apt/apt.conf.d/'", "/bin/cp: -r not specified; omitting directory '/etc/apt/sources.list.d/'", "/bin/cp: warning: source file '/bin/cp' specified more than once"], "stdout": "", "stdout_lines": []}
+2020-12-11 17:44:01,607 p=24078 u=vcjouni n=ansible | fatal: [worker4]: FAILED! => {"changed": true, "cmd": "/bin/cp /home/joro/99defaultrelease /etc/apt/apt.conf.d/ /bin/cp /home/joro/stable.list /etc/apt/sources.list.d/ /bin/cp /home/joro/testing.list /etc/apt/sources.list.d/", "delta": "0:00:00.005917", "end": "2020-12-11 15:44:01.572281", "msg": "non-zero return code", "rc": 1, "start": "2020-12-11 15:44:01.566364", "stderr": "/bin/cp: -r not specified; omitting directory '/etc/apt/apt.conf.d/'\n/bin/cp: -r not specified; omitting directory '/etc/apt/sources.list.d/'\n/bin/cp: warning: source file '/bin/cp' specified more than once", "stderr_lines": ["/bin/cp: -r not specified; omitting directory '/etc/apt/apt.conf.d/'", "/bin/cp: -r not specified; omitting directory '/etc/apt/sources.list.d/'", "/bin/cp: warning: source file '/bin/cp' specified more than once"], "stdout": "", "stdout_lines": []}
+2020-12-11 17:44:01,608 p=24078 u=vcjouni n=ansible | PLAY RECAP ****************************************************************************************
+2020-12-11 17:44:01,608 p=24078 u=vcjouni n=ansible | master1                    : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-11 17:44:01,608 p=24078 u=vcjouni n=ansible | worker1                    : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-11 17:44:01,608 p=24078 u=vcjouni n=ansible | worker2                    : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-11 17:44:01,609 p=24078 u=vcjouni n=ansible | worker3                    : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-11 17:44:01,609 p=24078 u=vcjouni n=ansible | worker4                    : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-11 17:53:44,737 p=24784 u=vcjouni n=ansible | ERROR! Syntax Error while loading YAML.
+  did not find expected '-' indicator
+
+The error appears to be in '/home/vcjouni/Terraform/Crio-cri-Ansible/update_testing.yml': line 33, column 2, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+ - name: Update apt2
+ ^ here
+
+2020-12-11 17:54:11,197 p=24801 u=vcjouni n=ansible | PLAY [all] *****************************************************************************************
+2020-12-11 17:54:11,207 p=24801 u=vcjouni n=ansible | TASK [Gathering Facts] *****************************************************************************
+2020-12-11 17:54:12,436 p=24801 u=vcjouni n=ansible | ok: [worker3]
+2020-12-11 17:54:12,480 p=24801 u=vcjouni n=ansible | ok: [worker4]
+2020-12-11 17:54:12,481 p=24801 u=vcjouni n=ansible | ok: [worker2]
+2020-12-11 17:54:12,486 p=24801 u=vcjouni n=ansible | ok: [worker1]
+2020-12-11 17:54:13,419 p=24801 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 17:54:13,426 p=24801 u=vcjouni n=ansible | TASK [Update package list] *************************************************************************
+2020-12-11 17:54:18,492 p=24801 u=vcjouni n=ansible | ok: [worker3]
+2020-12-11 17:54:18,571 p=24801 u=vcjouni n=ansible | ok: [worker4]
+2020-12-11 17:54:18,789 p=24801 u=vcjouni n=ansible | ok: [worker1]
+2020-12-11 17:54:19,098 p=24801 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 17:54:20,359 p=24801 u=vcjouni n=ansible | changed: [worker2]
+2020-12-11 17:54:20,365 p=24801 u=vcjouni n=ansible | TASK [Update apt1] *********************************************************************************
+2020-12-11 17:54:21,146 p=24801 u=vcjouni n=ansible | changed: [worker3]
+2020-12-11 17:54:21,151 p=24801 u=vcjouni n=ansible | changed: [worker1]
+2020-12-11 17:54:21,162 p=24801 u=vcjouni n=ansible | changed: [worker4]
+2020-12-11 17:54:21,175 p=24801 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 17:54:21,178 p=24801 u=vcjouni n=ansible | changed: [worker2]
+2020-12-11 17:54:21,183 p=24801 u=vcjouni n=ansible | TASK [Update apt2] *********************************************************************************
+2020-12-11 17:54:21,723 p=24801 u=vcjouni n=ansible | ok: [worker1]
+2020-12-11 17:54:21,751 p=24801 u=vcjouni n=ansible | ok: [worker2]
+2020-12-11 17:54:21,771 p=24801 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 17:54:21,789 p=24801 u=vcjouni n=ansible | ok: [worker3]
+2020-12-11 17:54:21,794 p=24801 u=vcjouni n=ansible | ok: [worker4]
+2020-12-11 17:54:21,800 p=24801 u=vcjouni n=ansible | TASK [Update apt3] *********************************************************************************
+2020-12-11 17:54:22,315 p=24801 u=vcjouni n=ansible | ok: [worker3]
+2020-12-11 17:54:22,384 p=24801 u=vcjouni n=ansible | ok: [worker4]
+2020-12-11 17:54:22,393 p=24801 u=vcjouni n=ansible | ok: [worker2]
+2020-12-11 17:54:22,410 p=24801 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 17:54:22,422 p=24801 u=vcjouni n=ansible | ok: [worker1]
+2020-12-11 17:54:22,430 p=24801 u=vcjouni n=ansible | TASK [Update cache again] **************************************************************************
+2020-12-11 17:54:27,517 p=24801 u=vcjouni n=ansible | ok: [worker3]
+2020-12-11 17:54:27,585 p=24801 u=vcjouni n=ansible | ok: [worker2]
+2020-12-11 17:54:27,695 p=24801 u=vcjouni n=ansible | ok: [worker4]
+2020-12-11 17:54:27,714 p=24801 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 17:54:27,799 p=24801 u=vcjouni n=ansible | ok: [worker1]
+2020-12-11 17:54:27,806 p=24801 u=vcjouni n=ansible | TASK [Add latest libseccomp2] **********************************************************************
+2020-12-11 17:54:32,569 p=24801 u=vcjouni n=ansible | [WARNING]: Consider using the apt module rather than running 'apt-get'.  If you need to use command
+because apt is insufficient you can add 'warn: false' to this command task or set
+'command_warnings=False' in ansible.cfg to get rid of this message.
+
+2020-12-11 17:54:32,570 p=24801 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 17:54:35,597 p=24801 u=vcjouni n=ansible | changed: [worker3]
+2020-12-11 17:54:35,693 p=24801 u=vcjouni n=ansible | changed: [worker2]
+2020-12-11 17:54:36,008 p=24801 u=vcjouni n=ansible | changed: [worker4]
+2020-12-11 17:54:36,040 p=24801 u=vcjouni n=ansible | changed: [worker1]
+2020-12-11 17:54:36,047 p=24801 u=vcjouni n=ansible | TASK [Set CRIO args] *******************************************************************************
+2020-12-11 17:54:36,337 p=24801 u=vcjouni n=ansible | [WARNING]: Consider using the replace, lineinfile or template module rather than running 'sed'.  If
+you need to use command because replace, lineinfile or template is insufficient you can add 'warn:
+false' to this command task or set 'command_warnings=False' in ansible.cfg to get rid of this
+message.
+
+2020-12-11 17:54:36,337 p=24801 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 17:54:36,346 p=24801 u=vcjouni n=ansible | changed: [worker1]
+2020-12-11 17:54:36,364 p=24801 u=vcjouni n=ansible | changed: [worker4]
+2020-12-11 17:54:36,388 p=24801 u=vcjouni n=ansible | changed: [worker3]
+2020-12-11 17:54:36,408 p=24801 u=vcjouni n=ansible | changed: [worker2]
+2020-12-11 17:54:36,416 p=24801 u=vcjouni n=ansible | TASK [Restart CRIO] ********************************************************************************
+2020-12-11 17:54:38,154 p=24801 u=vcjouni n=ansible | changed: [worker2]
+2020-12-11 17:54:38,227 p=24801 u=vcjouni n=ansible | changed: [worker1]
+2020-12-11 17:54:38,269 p=24801 u=vcjouni n=ansible | changed: [worker3]
+2020-12-11 17:54:38,270 p=24801 u=vcjouni n=ansible | changed: [worker4]
+2020-12-11 17:54:38,799 p=24801 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 17:54:38,800 p=24801 u=vcjouni n=ansible | PLAY RECAP *****************************************************************************************
+2020-12-11 17:54:38,801 p=24801 u=vcjouni n=ansible | master1                    : ok=9    changed=6    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-12-11 17:54:38,801 p=24801 u=vcjouni n=ansible | worker1                    : ok=9    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-12-11 17:54:38,801 p=24801 u=vcjouni n=ansible | worker2                    : ok=9    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-12-11 17:54:38,801 p=24801 u=vcjouni n=ansible | worker3                    : ok=9    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-12-11 17:54:38,801 p=24801 u=vcjouni n=ansible | worker4                    : ok=9    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-12-11 18:32:11,222 p=28806 u=vcjouni n=ansible | PLAY [master1] **************************************************************************************
+2020-12-11 18:32:11,232 p=28806 u=vcjouni n=ansible | TASK [Gathering Facts] ******************************************************************************
+2020-12-11 18:32:12,248 p=28806 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 18:32:12,254 p=28806 u=vcjouni n=ansible | TASK [Update package list] **************************************************************************
+2020-12-11 18:32:18,412 p=28806 u=vcjouni n=ansible | [WARNING]: Updating cache and auto-installing missing dependency: python3-apt
+
+2020-12-11 18:32:18,413 p=28806 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 18:32:18,416 p=28806 u=vcjouni n=ansible | TASK [Install packages that allow apt to be used over HTTPS] ****************************************
+2020-12-11 18:33:53,732 p=28806 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 18:33:53,739 p=28806 u=vcjouni n=ansible | TASK [Add CRIO repos] *******************************************************************************
+2020-12-11 18:34:05,708 p=28806 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 18:34:05,714 p=28806 u=vcjouni n=ansible | TASK [Update apt1] **********************************************************************************
+2020-12-11 18:34:06,324 p=28806 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 18:34:06,329 p=28806 u=vcjouni n=ansible | TASK [Update apt2] **********************************************************************************
+2020-12-11 18:34:06,764 p=28806 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 18:34:06,770 p=28806 u=vcjouni n=ansible | TASK [Update apt3] **********************************************************************************
+2020-12-11 18:34:07,208 p=28806 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 18:34:07,214 p=28806 u=vcjouni n=ansible | TASK [Update cache again] ***************************************************************************
+2020-12-11 18:34:17,436 p=28806 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 18:34:17,439 p=28806 u=vcjouni n=ansible | TASK [Prerequiste for using cri-o with Kubernetes] **************************************************
+2020-12-11 18:34:17,702 p=28806 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 18:34:17,708 p=28806 u=vcjouni n=ansible | TASK [Add latest libseccomp2] ***********************************************************************
+2020-12-11 18:34:20,853 p=28806 u=vcjouni n=ansible | [WARNING]: Consider using the apt module rather than running 'apt-get'.  If you need to use command
+because apt is insufficient you can add 'warn: false' to this command task or set
+'command_warnings=False' in ansible.cfg to get rid of this message.
+
+2020-12-11 18:34:20,853 p=28806 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 18:34:20,858 p=28806 u=vcjouni n=ansible | TASK [Install CRIO and its dependecies] *************************************************************
+2020-12-11 18:34:31,836 p=28806 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 18:34:31,841 p=28806 u=vcjouni n=ansible | TASK [Set CRIO Prometheus metrics] ******************************************************************
+2020-12-11 18:34:32,270 p=28806 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 18:34:32,275 p=28806 u=vcjouni n=ansible | TASK [Restart CRIO] *********************************************************************************
+2020-12-11 18:34:35,109 p=28806 u=vcjouni n=ansible | fatal: [master1]: FAILED! => {"changed": false, "msg": "Unable to start service crio: Job for crio.service failed because the control process exited with error code.\nSee \"systemctl status crio.service\" and \"journalctl -xe\" for details.\n"}
+2020-12-11 18:34:35,109 p=28806 u=vcjouni n=ansible | RUNNING HANDLER [crio status] ***********************************************************************
+2020-12-11 18:34:35,111 p=28806 u=vcjouni n=ansible | PLAY RECAP ******************************************************************************************
+2020-12-11 18:34:35,111 p=28806 u=vcjouni n=ansible | master1                    : ok=12   changed=10   unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-11 19:13:04,748 p=31486 u=vcjouni n=ansible | PLAY [master1] ****************************************************************************************************
+2020-12-11 19:13:04,757 p=31486 u=vcjouni n=ansible | TASK [Gathering Facts] ********************************************************************************************
+2020-12-11 19:13:06,652 p=31486 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:13:06,656 p=31486 u=vcjouni n=ansible | TASK [Update package list] ****************************************************************************************
+2020-12-11 19:13:08,898 p=31486 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:13:08,902 p=31486 u=vcjouni n=ansible | TASK [Install packages that allow apt to be used over HTTPS] ******************************************************
+2020-12-11 19:13:09,882 p=31486 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:13:09,888 p=31486 u=vcjouni n=ansible | TASK [Add CRIO repos] *********************************************************************************************
+2020-12-11 19:13:12,058 p=31486 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 19:13:12,064 p=31486 u=vcjouni n=ansible | TASK [Update apt1] ************************************************************************************************
+2020-12-11 19:13:12,660 p=31486 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:13:12,666 p=31486 u=vcjouni n=ansible | TASK [Update apt2] ************************************************************************************************
+2020-12-11 19:13:13,081 p=31486 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:13:13,087 p=31486 u=vcjouni n=ansible | TASK [Update apt3] ************************************************************************************************
+2020-12-11 19:13:13,525 p=31486 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:13:13,530 p=31486 u=vcjouni n=ansible | TASK [Update cache again] *****************************************************************************************
+2020-12-11 19:13:17,194 p=31486 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:13:17,198 p=31486 u=vcjouni n=ansible | TASK [Prerequiste for using cri-o with Kubernetes] ****************************************************************
+2020-12-11 19:13:17,436 p=31486 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 19:13:17,442 p=31486 u=vcjouni n=ansible | TASK [Add latest libseccomp2] *************************************************************************************
+2020-12-11 19:13:18,200 p=31486 u=vcjouni n=ansible | [WARNING]: Consider using the apt module rather than running 'apt-get'.  If you need to use command because apt is
+insufficient you can add 'warn: false' to this command task or set 'command_warnings=False' in ansible.cfg to get
+rid of this message.
+
+2020-12-11 19:13:18,200 p=31486 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 19:13:18,205 p=31486 u=vcjouni n=ansible | TASK [Install CRIO and its dependecies] ***************************************************************************
+2020-12-11 19:13:19,196 p=31486 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:13:19,201 p=31486 u=vcjouni n=ansible | TASK [Set CRIO Prometheus metrics] ********************************************************************************
+2020-12-11 19:13:19,612 p=31486 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:13:19,617 p=31486 u=vcjouni n=ansible | TASK [Restart CRIO] ***********************************************************************************************
+2020-12-11 19:13:20,468 p=31486 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 19:13:20,473 p=31486 u=vcjouni n=ansible | TASK [Remove swapfile from /etc/fstab] ****************************************************************************
+2020-12-11 19:13:20,843 p=31486 u=vcjouni n=ansible | ok: [master1] => (item=swap)
+2020-12-11 19:13:21,075 p=31486 u=vcjouni n=ansible | ok: [master1] => (item=none)
+2020-12-11 19:13:21,081 p=31486 u=vcjouni n=ansible | TASK [Disable swap] ***********************************************************************************************
+2020-12-11 19:13:21,116 p=31486 u=vcjouni n=ansible | skipping: [master1]
+2020-12-11 19:13:21,120 p=31486 u=vcjouni n=ansible | TASK [Add an apt signing key for Kubernetes] **********************************************************************
+2020-12-11 19:13:23,202 p=31486 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 19:13:23,207 p=31486 u=vcjouni n=ansible | TASK [Adding apt repository for Kubernetes] ***********************************************************************
+2020-12-11 19:13:27,006 p=31486 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 19:13:27,012 p=31486 u=vcjouni n=ansible | TASK [Install Kubernetes binaries] ********************************************************************************
+2020-12-11 19:13:43,597 p=31486 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 19:13:43,602 p=31486 u=vcjouni n=ansible | TASK [Upload custom KUBELET_EXTRA_ARGS] ***************************************************************************
+2020-12-11 19:13:44,156 p=31486 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 19:13:44,162 p=31486 u=vcjouni n=ansible | TASK [Initialize the Kubernetes cluster using kubeadm] ************************************************************
+2020-12-11 19:14:33,000 p=31486 u=vcjouni n=ansible |  [ERROR]: User interrupted execution
+
+2020-12-11 19:19:25,969 p=31902 u=vcjouni n=ansible | PLAY [master1] ****************************************************************************************************
+2020-12-11 19:19:25,979 p=31902 u=vcjouni n=ansible | TASK [Gathering Facts] ********************************************************************************************
+2020-12-11 19:19:26,882 p=31902 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:19:26,888 p=31902 u=vcjouni n=ansible | TASK [Update package list] ****************************************************************************************
+2020-12-11 19:19:29,349 p=31902 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:19:29,353 p=31902 u=vcjouni n=ansible | TASK [Install packages that allow apt to be used over HTTPS] ******************************************************
+2020-12-11 19:19:30,344 p=31902 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:19:30,350 p=31902 u=vcjouni n=ansible | TASK [Add CRIO repos] *********************************************************************************************
+2020-12-11 19:19:33,189 p=31902 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 19:19:33,196 p=31902 u=vcjouni n=ansible | TASK [Update apt1] ************************************************************************************************
+2020-12-11 19:19:33,791 p=31902 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:19:33,798 p=31902 u=vcjouni n=ansible | TASK [Update apt2] ************************************************************************************************
+2020-12-11 19:19:34,365 p=31902 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 19:19:34,372 p=31902 u=vcjouni n=ansible | TASK [Update apt3] ************************************************************************************************
+2020-12-11 19:19:34,840 p=31902 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 19:19:34,847 p=31902 u=vcjouni n=ansible | TASK [Update cache again] *****************************************************************************************
+2020-12-11 19:19:38,527 p=31902 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:19:38,531 p=31902 u=vcjouni n=ansible | TASK [Prerequiste for using cri-o with Kubernetes] ****************************************************************
+2020-12-11 19:19:38,773 p=31902 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 19:19:38,779 p=31902 u=vcjouni n=ansible | TASK [Add latest libseccomp2] *************************************************************************************
+2020-12-11 19:19:39,542 p=31902 u=vcjouni n=ansible | [WARNING]: Consider using the apt module rather than running 'apt-get'.  If you need to use command because apt is
+insufficient you can add 'warn: false' to this command task or set 'command_warnings=False' in ansible.cfg to get
+rid of this message.
+
+2020-12-11 19:19:39,542 p=31902 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 19:19:39,549 p=31902 u=vcjouni n=ansible | TASK [Install CRIO and its dependecies] ***************************************************************************
+2020-12-11 19:19:40,538 p=31902 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:19:40,544 p=31902 u=vcjouni n=ansible | TASK [Set conmon PATH] ********************************************************************************************
+2020-12-11 19:19:40,774 p=31902 u=vcjouni n=ansible | [WARNING]: Consider using the replace, lineinfile or template module rather than running 'sed'.  If you need to
+use command because replace, lineinfile or template is insufficient you can add 'warn: false' to this command task
+or set 'command_warnings=False' in ansible.cfg to get rid of this message.
+
+2020-12-11 19:19:40,774 p=31902 u=vcjouni n=ansible | fatal: [master1]: FAILED! => {"changed": true, "cmd": "sed -i 's/conmon = \"\"/conmon = \"/usr/libexec/podman/conmon\"' /etc/crio/crio.conf\n", "delta": "0:00:00.003466", "end": "2020-12-11 17:19:40.749306", "msg": "non-zero return code", "rc": 1, "start": "2020-12-11 17:19:40.745840", "stderr": "sed: -e expression #1, char 26: unknown option to `s'", "stderr_lines": ["sed: -e expression #1, char 26: unknown option to `s'"], "stdout": "", "stdout_lines": []}
+2020-12-11 19:19:40,775 p=31902 u=vcjouni n=ansible | PLAY RECAP ********************************************************************************************************
+2020-12-11 19:19:40,775 p=31902 u=vcjouni n=ansible | master1                    : ok=11   changed=5    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-11 19:21:53,513 p=32099 u=vcjouni n=ansible | PLAY [master1] ****************************************************************************************************
+2020-12-11 19:21:53,523 p=32099 u=vcjouni n=ansible | TASK [Gathering Facts] ********************************************************************************************
+2020-12-11 19:21:54,432 p=32099 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:21:54,438 p=32099 u=vcjouni n=ansible | TASK [Update package list] ****************************************************************************************
+2020-12-11 19:21:56,849 p=32099 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:21:56,853 p=32099 u=vcjouni n=ansible | TASK [Install packages that allow apt to be used over HTTPS] ******************************************************
+2020-12-11 19:21:57,842 p=32099 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:21:57,848 p=32099 u=vcjouni n=ansible | TASK [Add CRIO repos] *********************************************************************************************
+2020-12-11 19:22:05,452 p=32099 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 19:22:05,459 p=32099 u=vcjouni n=ansible | TASK [Update apt1] ************************************************************************************************
+2020-12-11 19:22:06,041 p=32099 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:22:06,047 p=32099 u=vcjouni n=ansible | TASK [Update apt2] ************************************************************************************************
+2020-12-11 19:22:06,465 p=32099 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:22:06,471 p=32099 u=vcjouni n=ansible | TASK [Update apt3] ************************************************************************************************
+2020-12-11 19:22:06,903 p=32099 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:22:06,909 p=32099 u=vcjouni n=ansible | TASK [Update cache again] *****************************************************************************************
+2020-12-11 19:22:10,594 p=32099 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:22:10,599 p=32099 u=vcjouni n=ansible | TASK [Prerequiste for using cri-o with Kubernetes] ****************************************************************
+2020-12-11 19:22:10,842 p=32099 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 19:22:10,847 p=32099 u=vcjouni n=ansible | TASK [Add latest libseccomp2] *************************************************************************************
+2020-12-11 19:22:11,612 p=32099 u=vcjouni n=ansible | [WARNING]: Consider using the apt module rather than running 'apt-get'.  If you need to use command because apt is
+insufficient you can add 'warn: false' to this command task or set 'command_warnings=False' in ansible.cfg to get
+rid of this message.
+
+2020-12-11 19:22:11,613 p=32099 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 19:22:11,618 p=32099 u=vcjouni n=ansible | TASK [Install CRIO and its dependecies] ***************************************************************************
+2020-12-11 19:22:12,609 p=32099 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:22:12,614 p=32099 u=vcjouni n=ansible | TASK [Set conmon PATH] ********************************************************************************************
+2020-12-11 19:22:12,855 p=32099 u=vcjouni n=ansible | [WARNING]: Consider using the replace, lineinfile or template module rather than running 'sed'.  If you need to
+use command because replace, lineinfile or template is insufficient you can add 'warn: false' to this command task
+or set 'command_warnings=False' in ansible.cfg to get rid of this message.
+
+2020-12-11 19:22:12,856 p=32099 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 19:22:12,861 p=32099 u=vcjouni n=ansible | TASK [Set CRIO Prometheus metrics] ********************************************************************************
+2020-12-11 19:22:13,279 p=32099 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:22:13,285 p=32099 u=vcjouni n=ansible | TASK [Restart CRIO] ***********************************************************************************************
+2020-12-11 19:22:14,070 p=32099 u=vcjouni n=ansible | fatal: [master1]: FAILED! => {"changed": false, "msg": "Unable to restart service crio: Job for crio.service failed because the control process exited with error code.\nSee \"systemctl status crio.service\" and \"journalctl -xe\" for details.\n"}
+2020-12-11 19:22:14,072 p=32099 u=vcjouni n=ansible | PLAY RECAP ********************************************************************************************************
+2020-12-11 19:22:14,072 p=32099 u=vcjouni n=ansible | master1                    : ok=13   changed=4    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-11 19:26:09,533 p=32324 u=vcjouni n=ansible | PLAY [master1] ****************************************************************************************************
+2020-12-11 19:26:09,542 p=32324 u=vcjouni n=ansible | TASK [Gathering Facts] ********************************************************************************************
+2020-12-11 19:26:10,460 p=32324 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:26:10,466 p=32324 u=vcjouni n=ansible | TASK [Update package list] ****************************************************************************************
+2020-12-11 19:26:12,906 p=32324 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:26:12,911 p=32324 u=vcjouni n=ansible | TASK [Install packages that allow apt to be used over HTTPS] ******************************************************
+2020-12-11 19:26:13,924 p=32324 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:26:13,930 p=32324 u=vcjouni n=ansible | TASK [Add CRIO repos] *********************************************************************************************
+2020-12-11 19:26:16,895 p=32324 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 19:26:16,902 p=32324 u=vcjouni n=ansible | TASK [Update apt1] ************************************************************************************************
+2020-12-11 19:26:17,489 p=32324 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:26:17,496 p=32324 u=vcjouni n=ansible | TASK [Update apt2] ************************************************************************************************
+2020-12-11 19:26:17,918 p=32324 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:26:17,924 p=32324 u=vcjouni n=ansible | TASK [Update apt3] ************************************************************************************************
+2020-12-11 19:26:18,342 p=32324 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:26:18,348 p=32324 u=vcjouni n=ansible | TASK [Update cache again] *****************************************************************************************
+2020-12-11 19:26:22,048 p=32324 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:26:22,052 p=32324 u=vcjouni n=ansible | TASK [Prerequiste for using cri-o with Kubernetes] ****************************************************************
+2020-12-11 19:26:22,298 p=32324 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 19:26:22,303 p=32324 u=vcjouni n=ansible | TASK [Add latest libseccomp2] *************************************************************************************
+2020-12-11 19:26:23,088 p=32324 u=vcjouni n=ansible | [WARNING]: Consider using the apt module rather than running 'apt-get'.  If you need to use command because apt is
+insufficient you can add 'warn: false' to this command task or set 'command_warnings=False' in ansible.cfg to get
+rid of this message.
+
+2020-12-11 19:26:23,088 p=32324 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 19:26:23,094 p=32324 u=vcjouni n=ansible | TASK [Install CRIO and its dependecies] ***************************************************************************
+2020-12-11 19:26:24,083 p=32324 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:26:24,088 p=32324 u=vcjouni n=ansible | TASK [Set conmon PATH] ********************************************************************************************
+2020-12-11 19:26:24,322 p=32324 u=vcjouni n=ansible | [WARNING]: Consider using the replace, lineinfile or template module rather than running 'sed'.  If you need to
+use command because replace, lineinfile or template is insufficient you can add 'warn: false' to this command task
+or set 'command_warnings=False' in ansible.cfg to get rid of this message.
+
+2020-12-11 19:26:24,322 p=32324 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 19:26:24,328 p=32324 u=vcjouni n=ansible | TASK [Set CRIO Prometheus metrics] ********************************************************************************
+2020-12-11 19:26:24,755 p=32324 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:26:24,761 p=32324 u=vcjouni n=ansible | TASK [Restart CRIO] ***********************************************************************************************
+2020-12-11 19:26:25,556 p=32324 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 19:26:25,561 p=32324 u=vcjouni n=ansible | TASK [Remove swapfile from /etc/fstab] ****************************************************************************
+2020-12-11 19:26:25,919 p=32324 u=vcjouni n=ansible | ok: [master1] => (item=swap)
+2020-12-11 19:26:26,150 p=32324 u=vcjouni n=ansible | ok: [master1] => (item=none)
+2020-12-11 19:26:26,157 p=32324 u=vcjouni n=ansible | TASK [Disable swap] ***********************************************************************************************
+2020-12-11 19:26:26,191 p=32324 u=vcjouni n=ansible | skipping: [master1]
+2020-12-11 19:26:26,195 p=32324 u=vcjouni n=ansible | TASK [Add an apt signing key for Kubernetes] **********************************************************************
+2020-12-11 19:26:28,067 p=32324 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:26:28,072 p=32324 u=vcjouni n=ansible | TASK [Adding apt repository for Kubernetes] ***********************************************************************
+2020-12-11 19:26:28,562 p=32324 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:26:28,568 p=32324 u=vcjouni n=ansible | TASK [Install Kubernetes binaries] ********************************************************************************
+2020-12-11 19:26:29,562 p=32324 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:26:29,568 p=32324 u=vcjouni n=ansible | TASK [Upload custom KUBELET_EXTRA_ARGS] ***************************************************************************
+2020-12-11 19:26:29,995 p=32324 u=vcjouni n=ansible | ok: [master1]
+2020-12-11 19:26:30,000 p=32324 u=vcjouni n=ansible | TASK [Initialize the Kubernetes cluster using kubeadm] ************************************************************
+2020-12-11 19:26:56,326 p=32324 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 19:26:56,332 p=32324 u=vcjouni n=ansible | TASK [debug] ******************************************************************************************************
+2020-12-11 19:26:56,369 p=32324 u=vcjouni n=ansible | ok: [master1] => {
+    "kube_init.stdout_lines": [
+        "[init] Using Kubernetes version: v1.20.0",
+        "[preflight] Running pre-flight checks",
+        "[preflight] Pulling images required for setting up a Kubernetes cluster",
+        "[preflight] This might take a minute or two, depending on the speed of your internet connection",
+        "[preflight] You can also perform this action in beforehand using 'kubeadm config images pull'",
+        "[certs] Using certificateDir folder \"/etc/kubernetes/pki\"",
+        "[certs] Generating \"ca\" certificate and key",
+        "[certs] Generating \"apiserver\" certificate and key",
+        "[certs] apiserver serving cert is signed for DNS names [kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local master1] and IPs [10.96.0.1 10.0.1.131]",
+        "[certs] Generating \"apiserver-kubelet-client\" certificate and key",
+        "[certs] Generating \"front-proxy-ca\" certificate and key",
+        "[certs] Generating \"front-proxy-client\" certificate and key",
+        "[certs] Generating \"etcd/ca\" certificate and key",
+        "[certs] Generating \"etcd/server\" certificate and key",
+        "[certs] etcd/server serving cert is signed for DNS names [localhost master1] and IPs [10.0.1.131 127.0.0.1 ::1]",
+        "[certs] Generating \"etcd/peer\" certificate and key",
+        "[certs] etcd/peer serving cert is signed for DNS names [localhost master1] and IPs [10.0.1.131 127.0.0.1 ::1]",
+        "[certs] Generating \"etcd/healthcheck-client\" certificate and key",
+        "[certs] Generating \"apiserver-etcd-client\" certificate and key",
+        "[certs] Generating \"sa\" key and public key",
+        "[kubeconfig] Using kubeconfig folder \"/etc/kubernetes\"",
+        "[kubeconfig] Writing \"admin.conf\" kubeconfig file",
+        "[kubeconfig] Writing \"kubelet.conf\" kubeconfig file",
+        "[kubeconfig] Writing \"controller-manager.conf\" kubeconfig file",
+        "[kubeconfig] Writing \"scheduler.conf\" kubeconfig file",
+        "[kubelet-start] Writing kubelet environment file with flags to file \"/var/lib/kubelet/kubeadm-flags.env\"",
+        "[kubelet-start] Writing kubelet configuration to file \"/var/lib/kubelet/config.yaml\"",
+        "[kubelet-start] Starting the kubelet",
+        "[control-plane] Using manifest folder \"/etc/kubernetes/manifests\"",
+        "[control-plane] Creating static Pod manifest for \"kube-apiserver\"",
+        "[control-plane] Creating static Pod manifest for \"kube-controller-manager\"",
+        "[control-plane] Creating static Pod manifest for \"kube-scheduler\"",
+        "[etcd] Creating static Pod manifest for local etcd in \"/etc/kubernetes/manifests\"",
+        "[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory \"/etc/kubernetes/manifests\". This can take up to 4m0s",
+        "[apiclient] All control plane components are healthy after 20.002450 seconds",
+        "[upload-config] Storing the configuration used in ConfigMap \"kubeadm-config\" in the \"kube-system\" Namespace",
+        "[kubelet] Creating a ConfigMap \"kubelet-config-1.20\" in namespace kube-system with the configuration for the kubelets in the cluster",
+        "[upload-certs] Skipping phase. Please see --upload-certs",
+        "[mark-control-plane] Marking the node master1 as control-plane by adding the labels \"node-role.kubernetes.io/master=''\" and \"node-role.kubernetes.io/control-plane='' (deprecated)\"",
+        "[mark-control-plane] Marking the node master1 as control-plane by adding the taints [node-role.kubernetes.io/master:NoSchedule]",
+        "[bootstrap-token] Using token: 724lpt.769v1n83oqdrhcia",
+        "[bootstrap-token] Configuring bootstrap tokens, cluster-info ConfigMap, RBAC Roles",
+        "[bootstrap-token] configured RBAC rules to allow Node Bootstrap tokens to get nodes",
+        "[bootstrap-token] configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials",
+        "[bootstrap-token] configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token",
+        "[bootstrap-token] configured RBAC rules to allow certificate rotation for all node client certificates in the cluster",
+        "[bootstrap-token] Creating the \"cluster-info\" ConfigMap in the \"kube-public\" namespace",
+        "[kubelet-finalize] Updating \"/etc/kubernetes/kubelet.conf\" to point to a rotatable kubelet client certificate and key",
+        "[addons] Applied essential addon: CoreDNS",
+        "[addons] Applied essential addon: kube-proxy",
+        "",
+        "Your Kubernetes control-plane has initialized successfully!",
+        "",
+        "To start using your cluster, you need to run the following as a regular user:",
+        "",
+        "  mkdir -p $HOME/.kube",
+        "  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config",
+        "  sudo chown $(id -u):$(id -g) $HOME/.kube/config",
+        "",
+        "Alternatively, if you are the root user, you can run:",
+        "",
+        "  export KUBECONFIG=/etc/kubernetes/admin.conf",
+        "",
+        "You should now deploy a pod network to the cluster.",
+        "Run \"kubectl apply -f [podnetwork].yaml\" with one of the options listed at:",
+        "  https://kubernetes.io/docs/concepts/cluster-administration/addons/",
+        "",
+        "Then you can join any number of worker nodes by running the following on each as root:",
+        "",
+        "kubeadm join 10.0.1.131:6443 --token 724lpt.769v1n83oqdrhcia \\",
+        "    --discovery-token-ca-cert-hash sha256:c95b8caf5033859b6951a7193793d674a6ce8d3a8f6212bc53fd780a5de2700a "
+    ]
+}
+2020-12-11 19:26:56,373 p=32324 u=vcjouni n=ansible | TASK [Setup kubeconfig for joro user] *****************************************************************************
+2020-12-11 19:26:56,654 p=32324 u=vcjouni n=ansible | changed: [master1] => (item=mkdir -p /home/joro/.kube)
+2020-12-11 19:26:56,910 p=32324 u=vcjouni n=ansible | changed: [master1] => (item=cp -i /etc/kubernetes/admin.conf /home/joro/.kube/config)
+2020-12-11 19:26:57,158 p=32324 u=vcjouni n=ansible | changed: [master1] => (item=chown joro:joro /home/joro/.kube/config)
+2020-12-11 19:26:57,159 p=32324 u=vcjouni n=ansible | [WARNING]: Consider using the file module with state=directory rather than running 'mkdir'.  If you need to use
+command because file is insufficient you can add 'warn: false' to this command task or set
+'command_warnings=False' in ansible.cfg to get rid of this message.
+
+2020-12-11 19:26:57,159 p=32324 u=vcjouni n=ansible | [WARNING]: Consider using the file module with owner rather than running 'chown'.  If you need to use command
+because file is insufficient you can add 'warn: false' to this command task or set 'command_warnings=False' in
+ansible.cfg to get rid of this message.
+
+2020-12-11 19:26:57,164 p=32324 u=vcjouni n=ansible | TASK [Install Flannel pod network] ********************************************************************************
+2020-12-11 19:26:58,134 p=32324 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 19:26:58,139 p=32324 u=vcjouni n=ansible | TASK [debug] ******************************************************************************************************
+2020-12-11 19:26:58,177 p=32324 u=vcjouni n=ansible | ok: [master1] => {
+    "flannel.stdout_lines": [
+        "podsecuritypolicy.policy/psp.flannel.unprivileged created",
+        "clusterrole.rbac.authorization.k8s.io/flannel created",
+        "clusterrolebinding.rbac.authorization.k8s.io/flannel created",
+        "serviceaccount/flannel created",
+        "configmap/kube-flannel-cfg created",
+        "daemonset.apps/kube-flannel-ds created"
+    ]
+}
+2020-12-11 19:26:58,181 p=32324 u=vcjouni n=ansible | TASK [Generate join command] **************************************************************************************
+2020-12-11 19:26:58,492 p=32324 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 19:26:58,498 p=32324 u=vcjouni n=ansible | TASK [Copy join command to local file] ****************************************************************************
+2020-12-11 19:26:58,918 p=32324 u=vcjouni n=ansible | changed: [master1 -> localhost]
+2020-12-11 19:26:58,923 p=32324 u=vcjouni n=ansible | TASK [Copy cgroups conf] ******************************************************************************************
+2020-12-11 19:26:59,396 p=32324 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 19:26:59,402 p=32324 u=vcjouni n=ansible | TASK [Restart kubelet and do daemon-reload to pick up config changes] *********************************************
+2020-12-11 19:27:07,476 p=32324 u=vcjouni n=ansible | changed: [master1]
+2020-12-11 19:27:07,477 p=32324 u=vcjouni n=ansible | PLAY RECAP ********************************************************************************************************
+2020-12-11 19:27:07,478 p=32324 u=vcjouni n=ansible | master1                    : ok=28   changed=12   unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   

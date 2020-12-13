@@ -1,0 +1,72 @@
+---
+- hosts: all
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+    CRIO_VERSION: "1.19"
+    OS: "Debian_10"
+  become: true
+  tasks:
+  - name: Update package list
+    apt:
+      update_cache: yes
+    register: task_result
+    until: task_result is success
+    retries: 20
+    delay: 2
+
+#  - name: Upload 
+#    copy:
+#      src: Apt/
+#      dest: /home/joro
+#      owner: root
+#      group: root
+#      mode: '0440'
+
+  - name: Update apt1
+    copy:
+      src: Apt/99defaultrelease
+      dest: /etc/apt/apt.conf.d/
+      owner: root
+      group: root
+      mode: '0440'
+
+  - name: Update apt2
+    copy:
+      src: Apt/stable.list
+      dest: /etc/apt/sources.list.d/
+      owner: root
+      group: root
+      mode: '0440'
+
+  - name: Update apt3
+    copy:
+      src: Apt/testing.list
+      dest: /etc/apt/sources.list.d/
+      owner: root
+      group: root
+      mode: '0440'
+
+  - name: Update cache again
+    apt:
+      update_cache: yes
+    register: task_result
+    until: task_result is success
+    retries: 20
+    delay: 2
+
+  - name: Add latest libseccomp2
+    shell: |
+      /usr/bin/apt-get -t testing install -y libseccomp2
+      /usr/bin/apt-get install -y cri-o-runc
+
+  - name: Set CRIO args
+    shell:
+      /usr/bin/sed -i "s#/usr/sbin/runc#/usr/lib/cri-o-runc/sbin/runc##" /etc/crio/crio.conf.d/01-crio-runc.conf
+
+  - name: Restart CRIO 
+    systemd:
+      name: crio
+      state: restarted
+      enabled: yes
+      daemon_reload: yes
+...
