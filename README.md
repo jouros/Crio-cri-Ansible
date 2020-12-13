@@ -1,5 +1,9 @@
 # Ansible scripts to deploy cri-o container runtime in K8s running on Debian 10, Flannel and KVM
 
+Dev Branch is upstream testing for new features
+
+Main Branch is latest stable. 
+
 I'm using KVM cluster deployed using jouros/Terraform-libvirt-k8s scripts
 
 
