@@ -35,6 +35,9 @@
       - gnupg
       - libseccomp-dev
       - conntrack
+      - tree
+      - git
+      - bridge-utils
 
   - name: Add CRIO repos
     shell: |
