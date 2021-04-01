@@ -26,7 +26,7 @@ Compiler:      gc
 Platform:      linux/amd64  
 Linkmode:      dynamic  
 
-crictl --runtime-endpoint unix:///var/run/crio/crio.sock version  
+sudo crictl --runtime-endpoint unix:///var/run/crio/crio.sock version  
 Version:  0.1.0  
 RuntimeName:  cri-o  
 RuntimeVersion:  1.19.0  
@@ -55,7 +55,7 @@ sudo curl -v --unix-socket /var/run/crio/crio.sock http://localhost/info | jq
   }  
 }  
 
-crio-status info  
+sudo crio-status info  
 cgroup driver: systemd  
 storage driver: overlay  
 storage root: /var/lib/containers/storage  
