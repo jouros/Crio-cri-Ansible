@@ -1,14 +1,25 @@
 ---
-- hosts: master1 
+- hosts: master* 
   become: yes
   vars:
     ansible_python_interpreter: /usr/bin/python3
-    CRIO_VERSION: "1.19"
+    CRIO_VERSION: "1.20"
     OS: "Debian_10"
   tasks:
   - name: Update package list
     apt:
       update_cache: yes
+      force_apt_get: yes
+      cache_valid_time: 3600
+    register: task_result
+    until: task_result is success
+    retries: 20
+    delay: 2
+
+  - name: Upgrade all packages
+    apt:
+      upgrade: dist
+      force_apt_get: yes
     register: task_result
     until: task_result is success
     retries: 20
